@@ -6,14 +6,13 @@ import { CreateMailDto } from '../dto/create-mail.dto';
 export class MailService {
   constructor(private mailerService: MailerService) {}
 
-  async registerMailerToComremit(account: CreateMailDto) {
+  async sendRegisterMail(account: CreateMailDto) {
     const logger = new Logger('Mailer-Microservice');
-    const templateName = `${account.platform[0].toUpperCase()}${account.platform.slice(1).toLowerCase()}`;
     try {
       await this.mailerService.sendMail({
         to: account.email,
         subject: account.subject,
-        template: `comremit.hbs`,
+        template: `./register.${account.platform.toLowerCase()}`,
         context: {
           name: account.name,
           code: account.code,
@@ -22,7 +21,7 @@ export class MailService {
         },
       });
       logger.log(
-        `Mail register sent with template: register${templateName}.hbs to account: ${account.email}`,
+        `Mail register sent with template: register.${account.platform}.hbs to account: ${account.email}`,
       );
     } catch (error) {
       logger.error(error);
