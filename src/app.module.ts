@@ -21,6 +21,7 @@ import { envs } from './config';
       defaults: {
         from: '"No Reply" <support@sendmundo.com>',
       },
+      preview: true,
       template: {
         dir: join(__dirname, '/templates'),
         adapter: new HandlebarsAdapter(),
