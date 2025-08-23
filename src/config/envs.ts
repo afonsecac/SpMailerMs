@@ -3,6 +3,7 @@ import * as joi from 'joi';
 
 interface EnvVars {
   MS_PORT: number;
+  MS_HOST: string;
   MAILER_HOST: string;
   MAILER_PORT: number;
   MAILER_USER: string;
@@ -12,6 +13,7 @@ interface EnvVars {
 const envVarsSchema = joi
   .object({
     MS_PORT: joi.number().default(3002),
+    MS_HOST: joi.string().default('localhost'),
     MAILER_HOST: joi.string().required(),
     MAILER_PORT: joi.number().required(),
     MAILER_USER: joi.string().required(),
@@ -29,6 +31,7 @@ const envVars: EnvVars = value;
 
 export const envs = {
   port: envVars.MS_PORT,
+  host: envVars.MS_HOST,
   mailerHost: envVars.MAILER_HOST,
   mailerPort: envVars.MAILER_PORT,
   mailerUser: envVars.MAILER_USER,

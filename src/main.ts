@@ -12,13 +12,16 @@ async function bootstrap() {
     {
       transport: Transport.TCP,
       options: {
+        host: envs.host,
         port: port,
       },
     },
   );
   await app.listen();
 
-  logger.log(`Mailer-Microservice is listening on port ${port}`);
+  logger.log(
+    `Mailer-Microservice is listening on port ${port} on host ${envs.host}`,
+  );
 }
 
 bootstrap();
