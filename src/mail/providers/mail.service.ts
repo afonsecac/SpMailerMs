@@ -27,27 +27,4 @@ export class MailService {
       logger.error(error);
     }
   }
-
-  async registerMailerToSendmundo(account: CreateMailDto) {
-    const logger = new Logger('Mailer-Microservice');
-    const templateName = `${account.platform[0].toUpperCase()}${account.platform.slice(1).toLowerCase()}`;
-    try {
-      await this.mailerService.sendMail({
-        to: account.email,
-        subject: account.subject,
-        template: `sendmundo.hbs`,
-        context: {
-          name: account.name,
-          code: account.code,
-          url: account.url,
-          platform: account.platform,
-        },
-      });
-      logger.log(
-        `Mail register sent with template: register${templateName}.hbs to account: ${account.email}`,
-      );
-    } catch (error) {
-      logger.error(error);
-    }
-  }
 }
