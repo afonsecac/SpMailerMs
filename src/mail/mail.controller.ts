@@ -9,6 +9,6 @@ export class MailController {
 
   @MessagePattern('register_mail')
   create(@Payload() createMailDto: CreateMailDto) {
-    return this.mailService.registerMailer(createMailDto);
+    return this.mailService.registerMailerToComremit(createMailDto);
   }
 }
