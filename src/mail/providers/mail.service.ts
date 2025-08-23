@@ -12,7 +12,7 @@ export class MailService {
       return this.mailerService.sendMail({
         to: account.email,
         subject: account.subject,
-        template: `./register.${account.platform.toLowerCase()}.hbs`,
+        template: `./register.${account.platform.toLowerCase()}`,
         context: {
           name: account.name,
           code: account.code,
