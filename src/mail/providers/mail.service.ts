@@ -13,7 +13,7 @@ export class MailService {
       await this.mailerService.sendMail({
         to: account.email,
         subject: account.subject,
-        template: `register.comremit.hbs`,
+        template: `comremit.hbs`,
         context: {
           name: account.name,
           code: account.code,
@@ -36,7 +36,7 @@ export class MailService {
       await this.mailerService.sendMail({
         to: account.email,
         subject: account.subject,
-        template: `register.sendmundo.hbs`,
+        template: `sendmundo.hbs`,
         context: {
           name: account.name,
           code: account.code,
