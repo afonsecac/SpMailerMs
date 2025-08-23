@@ -7,7 +7,6 @@ export class MailService {
   constructor(private mailerService: MailerService) {}
 
   registerMailer(account: CreateMailDto) {
-    console.log('Register Mailer', account);
     const templateName = `${account.platform[0].toUpperCase()}${account.platform.slice(1).toLowerCase()}`;
     try {
       return this.mailerService.sendMail({

@@ -9,7 +9,6 @@ export class MailController {
 
   @MessagePattern('register_mail')
   create(@Payload() createMailDto: CreateMailDto) {
-    console.log(createMailDto, 'createMailDto');
     return this.mailService.registerMailer(createMailDto);
   }
 }
