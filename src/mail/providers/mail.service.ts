@@ -7,6 +7,7 @@ export class MailService {
   constructor(private mailerService: MailerService) {}
 
   registerMailer(account: CreateMailDto) {
+    console.log(account);
     try {
       return this.mailerService.sendMail({
         to: account.email,
