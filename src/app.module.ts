@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
-import process from 'process';
-import { join } from 'path';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
+import { join } from 'path';
 import { MailModule } from './mail/mail.module';
 import { envs } from './config';
 
@@ -21,9 +20,8 @@ import { envs } from './config';
       defaults: {
         from: '"No Reply" <support@sendmundo.com>',
       },
-      preview: true,
       template: {
-        dir: join(__dirname, '/templates'),
+        dir: join(__dirname, 'templates'),
         adapter: new HandlebarsAdapter(),
         options: {
           strict: true,
