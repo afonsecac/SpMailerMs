@@ -10,7 +10,7 @@ export class MailService {
     const logger = new Logger('Mailer-Microservice');
     try {
       console.log('Sending mail preparing');
-      await this.mailerService
+      return this.mailerService
         .sendMail({
           to: account.email,
           subject: account.subject,
@@ -27,7 +27,6 @@ export class MailService {
             `Mail register sent with template: register.${account.platform}.hbs to account: ${account.email}`,
           );
         });
-      console.log('Mail sending');
     } catch (error) {
       logger.error(error);
     }
