@@ -4,11 +4,12 @@ import { CreateMailDto } from '../dto/create-mail.dto';
 
 @Injectable()
 export class MailService {
+  private readonly logger = new Logger(MailService.name);
   constructor(private mailerService: MailerService) {}
 
   sendRegisterMail(account: CreateMailDto) {
     try {
-      console.log('Sending mail preparing');
+      this.logger.log('Sending mail preparing');
       return this.mailerService.sendMail({
         to: account.email,
         subject: account.subject,
@@ -21,7 +22,7 @@ export class MailService {
         },
       });
     } catch (error) {
-      console.error(error);
+      this.logger.error(error);
     }
   }
 }
