@@ -7,11 +7,13 @@ import { envs } from './config';
 async function bootstrap() {
   const logger = new Logger('Mailer-Microservice');
   const port = envs.port;
+  const host = envs.host;
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     AppModule,
     {
       transport: Transport.TCP,
       options: {
+        host,
         port,
       },
     },
@@ -29,7 +31,7 @@ async function bootstrap() {
   await app.listen();
 
   logger.log(
-    `Mailer-Microservice is listening on port ${port} on host ${envs.host}`,
+    `Mailer-Microservice is listening on port ${port} on host ${host}`,
   );
 }
 
