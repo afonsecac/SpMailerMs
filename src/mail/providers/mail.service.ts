@@ -6,29 +6,22 @@ import { CreateMailDto } from '../dto/create-mail.dto';
 export class MailService {
   constructor(private mailerService: MailerService) {}
 
-  async sendRegisterMail(account: CreateMailDto) {
-    const logger = new Logger('Mailer-Microservice');
+  sendRegisterMail(account: CreateMailDto) {
     try {
       console.log('Sending mail preparing');
-      return this.mailerService
-        .sendMail({
-          to: account.email,
-          subject: account.subject,
-          template: `./register.${account.platform.toLowerCase()}`,
-          context: {
-            name: account.name,
-            code: account.code,
-            url: account.url,
-            platform: account.platform,
-          },
-        })
-        .then(() => {
-          logger.log(
-            `Mail register sent with template: register.${account.platform}.hbs to account: ${account.email}`,
-          );
-        });
+      return this.mailerService.sendMail({
+        to: account.email,
+        subject: account.subject,
+        template: `./register`,
+        context: {
+          name: account.name,
+          code: account.code,
+          url: account.url,
+          platform: account.platform,
+        },
+      });
     } catch (error) {
-      logger.error(error);
+      console.error(error);
     }
   }
 }

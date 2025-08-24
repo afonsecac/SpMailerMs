@@ -25,13 +25,13 @@ const envVarsSchema = joi
   })
   .unknown(true);
 
-const { error, value } = envVarsSchema.validate(process.env);
+const { error, value: envVarsData } = envVarsSchema.validate(process.env);
 
 if (error) {
   throw new Error(`Config validation error: ${error.message}`);
 }
 
-const envVars: EnvVars = value;
+const envVars: EnvVars = envVarsData;
 
 export const envs = {
   port: envVars.MS_PORT,

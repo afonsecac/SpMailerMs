@@ -1,0 +1,164 @@
+<div class="content">
+  <div class="content">
+    <div class="content-img">
+      <img src="https://www.comremit.com/img/comremit.png" alt="Comremit" style="margin: auto" />
+    </div>
+  </div>
+  <div class="content">
+    <p>
+    <h3>¡BIENVENIDO A NUESTRA PLATAFORMA {{ platform }}!</h3>
+    </p>
+    <p>
+    <h3>WELCOME TO {{ platform }}!</h3>
+    </p>
+  </div>
+  <br>
+  <div class="content">
+    <p>
+      Estimado/a {{ name }},
+    </p>
+    <p>
+      Dear customer {{ name }},
+    </p>
+  </div>
+  <div class="content">
+    <p>
+      Es un placer darte la bienvenida a la familia de Comremit. Queremos agradecerte la confianza que depositas en
+      nosotros y asegurarte que haremos todo lo posible para que tu experiencia sea satisfactoria y valiosa.
+    </p>
+    <p>
+      Puedes sacar el máximo provecho de nuestros servicios. Además, nuestro equipo de atención al cliente está siempre
+      disponible para resolver cualquier duda o consulta que tengas.
+    </p>
+    <p>
+      👉 Tu próximo paso: Debes verificar tu cuenta con el siguiente código: {{ code }}. O pinchar el siguiente <a
+      href="{{ url }}">enlace</a>.
+    </p>
+    <p>
+      Estamos seguros de que juntos lograremos grandes resultados.
+    </p>
+    <p>
+      Bienvenido/a a bordo,
+      El equipo de Comremit Solutions SL
+    </p>
+  </div>
+  <div class="line"></div>
+  <div class="content footerContent">
+    <p>Comremit Solutions SL</p>
+    <p>
+      Pasaje del Carme, 24, Sant Cugat del Vallés, 08173. Barcelona, España
+    </p>
+    <p>CIF: B10583565</p>
+    <p>
+      <a href="https://www.comremit.com">
+        www.comremit.com
+      </a>
+    </p>
+  </div>
+</div>
+
+<style>
+  body {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .content {
+    display: block;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    min-width: 400px;
+    color: rgb(175, 1, 1);
+  }
+
+  .content-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content-img img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content h3 {
+    font-size: 24px;
+    min-width: 400px;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+  }
+
+  .content p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .content a {
+    text-align: center;
+    margin: auto;
+    display: block;
+  }
+
+  .inline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .inline div {
+    min-width: 150px;
+    min-height: 50px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+  .inline .left {
+    text-align: right;
+  }
+
+  .inline .right {
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  .line {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid gray;
+  }
+
+  .footerContent {
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 10px;
+    background: rgb(175, 1, 1);
+  }
+
+  .footerContent p {
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    align-items: center;
+    gap: 16px;
+    color: white;
+  }
+
+  .footerContent p a {
+    text-decoration: none;
+  }
+</style>
