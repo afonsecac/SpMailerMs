@@ -10,15 +10,16 @@ export class MailService {
   sendRegisterMail(account: CreateMailDto) {
     try {
       this.logger.log('Sending mail preparing');
+      const platformName = `${account.platform[0].toUpperCase()}${account.platform.slice(1)}`;
       return this.mailerService.sendMail({
         to: account.email,
         subject: account.subject,
-        template: `./register`,
+        template: `./register.${account.platform}`,
         context: {
           name: account.name,
           code: account.code,
           url: account.url,
-          platform: account.platform,
+          platform: platformName,
         },
       });
     } catch (error) {
