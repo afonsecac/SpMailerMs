@@ -13,7 +13,6 @@ export class MailService {
       if (account.platform === undefined || account.platform === null) {
         account.platform = 'comremit';
       }
-      this.logger.log('Sending mail preparing');
       const platformName = `${account.platform[0].toUpperCase()}${account.platform.slice(1)}`;
       return this.mailerService.sendMail({
         to: account.email,
