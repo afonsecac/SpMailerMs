@@ -18,7 +18,7 @@ RUN yarn build
 FROM node:22-alpine3.18 AS runner
 
 # Set working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package.json yarn.lock ./
 
