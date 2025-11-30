@@ -26,7 +26,7 @@ export class MailService {
         },
       });
     } catch (error) {
-      this.logger.error(error);
+      console.error('Console Error: ' + error);
     }
   }
 }
