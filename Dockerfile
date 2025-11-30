@@ -25,6 +25,10 @@ COPY --from=builder /app/dist ./dist
 # # Copiar el directorio y su contenido
 # RUN mkdir -p ./pokedex
 
+FROM node:22-alpine3.18 AS copyTemplate
+WORKDIR /app
+COPY --from=runner /app/dist/template ./app/template
+
 # COPY --from=builder ./app/dist/ ./app
 # COPY ./.env ./app/.env
 
