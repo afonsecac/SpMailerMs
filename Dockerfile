@@ -11,6 +11,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN yarn build
+RUN cp -r /app/src/templates dist/templates
 
 # Production image
 FROM node:22-alpine3.18 AS runner
