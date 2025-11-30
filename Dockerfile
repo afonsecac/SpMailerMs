@@ -24,7 +24,7 @@ RUN yarn install --production --frozen-lockfile
 COPY --from=builder /app/dist ./dist
 
 # Optional: Copy templates if needed (uncomment if required)
-COPY --from=builder /app/dist/template ./app/template
+#COPY --from=builder /app/dist/template ./app/template
 
 # Run as non-root user for security
 #RUN adduser -D pokeuser
