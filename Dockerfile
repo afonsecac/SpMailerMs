@@ -21,6 +21,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --prod
 COPY --from=builder /app/dist ./dist
+COPY /app/dist/template ./app/template
 
 # # Copiar el directorio y su contenido
 # RUN mkdir -p ./pokedex
