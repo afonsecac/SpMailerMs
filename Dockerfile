@@ -16,18 +16,11 @@ RUN yarn build
 
 # Production image, copy all the files and run next
 FROM node:22-alpine3.18 AS runner
-
 # Set working directory
 WORKDIR /app
-
 COPY package.json yarn.lock ./
-
 RUN yarn install --prod
-
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/templates ./templates
-COPY --from=builder /app/src/templates ./templates
-COPY --from=builder /app/dist/templates ./templates
 
 # # Copiar el directorio y su contenido
 # RUN mkdir -p ./pokedex
