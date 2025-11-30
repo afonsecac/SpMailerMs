@@ -17,7 +17,7 @@ export class MailService {
       return this.mailerService.sendMail({
         to: account.email,
         subject: account.subject,
-        template: `./register.${account.platform}`,
+        template: `register.${account.platform}`,
         context: {
           name: account.name,
           code: account.code,
